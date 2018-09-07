@@ -247,7 +247,7 @@
           <hashTree>
             <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
               <collectionProp name="Asserion.test_strings">
-                <stringProp name="-1045640469">Logged in as: &lt;bdi&gt;test1&lt;/bdi&gt;</stringProp>
+                <stringProp name="1804120915">Logged in as: &lt;bdi&gt;${login}&lt;/bdi&gt;</stringProp>
               </collectionProp>
               <stringProp name="Assertion.custom_message"></stringProp>
               <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>

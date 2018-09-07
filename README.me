@@ -6,8 +6,17 @@
 5. ѕереходим в меню "Admin" -> "User Manager"
 6. »мпортируем файл users.csv в раздел "Bulk User Import"
 7. «адаем всем пользовател€м пароль "1"
-8. Ћибо делаем аналогичное с помощью подпроекта kotlin.dokuwiki (gradlew.bat test)
+8. Ћибо делаем аналогичное с помощью подпроекта https://github.com/SpiderZZZ/DokuWikiInitTest (gradlew.bat test)
 9. «апускаем нагрузочное тесты (предаврительно должен быть установлен maven последней версии http://maven.apache.org/download.cgi, добавлена перменна€ окружени€ M2_HOME и путь до mvn.cmd добавлен в PATH):
 mvn clean verify 
+
+«начени€ по умолчанию:
+
+numberOfThreads (количество нитей/потоков): 10
+serverName (адрес тестируемого сервера): localhost
+serverPort (порт тестирумого сервера): 80
+threadDuration (предельное врем€ выполнени€ в рамках одного потока): 100 (секунд)
+durationTimePageAssert (ожидаемое врем€ отклика каждой страницы тестируемой системы): 2000 мс (или 2 секунды)
+
 10. ≈сли нужно параметриризовать тесты то нужно запустить команду: 
 mvn clean verify -DnumberOfThreads=100 -DserverName=localhost -DserverPort=80 -DthreadDuration=100 -DdurationTimePageAssert=2000

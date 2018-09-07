@@ -1,0 +1,13 @@
+1. Установить docker и docker-compose
+2. Выполнить шаги из https://store.docker.com/community/images/bitnami/dokuwiki
+3. Зайти в приложение (локальный адрес http://localhost:80)
+   3.1 Если работаем на удаленной машине, то нужно пробросить через putty tunnels или с помощью  настройки iptables
+4. Для входа в приложение используем superuser/bitnami1 (см. документацию)
+5. Переходим в меню "Admin" -> "User Manager"
+6. Импортируем файл users.csv в раздел "Bulk User Import"
+7. Задаем всем пользователям пароль "1"
+8. Либо делаем аналогичное с помощью подпроекта kotlin.dokuwiki (gradlew.bat test)
+9. Запускаем нагрузочное тесты (предаврительно должен быть установлен maven последней версии http://maven.apache.org/download.cgi, добавлена перменная окружения M2_HOME и путь до mvn.cmd добавлен в PATH):
+mvn clean verify 
+10. Если нужно параметриризовать тесты то нужно запустить команду: 
+mvn clean verify -DnumberOfThreads=100 -DserverName=localhost -DserverPort=80 -DthreadDuration=100 -DdurationTimePageAssert=2000
